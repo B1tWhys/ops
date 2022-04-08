@@ -1,1 +1,1 @@
-{"appName":"crypto_ingest","userGivenName":"crypto_ingest","destNamespace":"default","destServer":"https://kubernetes.default.svc","srcPath":".","srcRepoURL":"https://github.com/Bouldersky/crypto-pd-analysis.git","srcTargetRevision":"master","labels":null,"exclude":"","include":""}
+{"appName":"crypto-ingest","userGivenName":"crypto-ingest","destNamespace":"default","destServer":"https://kubernetes.default.svc","srcPath":".","srcRepoURL":"https://github.com/Bouldersky/crypto-pd-analysis.git","srcTargetRevision":"master","labels":null,"exclude":"","include":""}
