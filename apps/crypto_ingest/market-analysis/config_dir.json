@@ -1,1 +1,0 @@
-{"appName":"crypto-ingest","userGivenName":"crypto-ingest","destNamespace":"default","destServer":"https://kubernetes.default.svc","srcPath":"crypto_l2_stream_ingest/k8s","srcRepoURL":"https://github.com/Bouldersky/crypto-pd-analysis.git","srcTargetRevision":"k8s","labels":null,"exclude":"","include":""}
