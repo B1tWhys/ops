@@ -10,3 +10,7 @@ spec:
   source:
     repoURL: git@github.com:Bouldersky/ops.git
     path: bootstrap
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

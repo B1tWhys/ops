@@ -6,7 +6,11 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-  project: infra
+  project: default
   source:
     repoURL: git@github.com:Bouldersky/ops.git
     path: apps
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
