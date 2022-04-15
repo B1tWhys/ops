@@ -5,3 +5,4 @@ resources:
 #  - https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.4/controller.yaml
   - https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/install.yaml
   - ./root-app.yaml
+  - ./root-project.yaml
