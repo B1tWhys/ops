@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  name: root-project
   namespace: argocd
-  name: root-app
 spec:
   destination:
-    server: https://kubernetes.default.svc
-  project: infra
+    server: 'kubernetes.default.svc'
+  project: default
   source:
     repoURL: git@github.com:Bouldersky/ops.git
-    path: apps
+    path: projects
