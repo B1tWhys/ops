@@ -7,7 +7,7 @@ spec:
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argo
-  project: default
+  project: infra
   source:
     repoURL: https://github.com/argoproj/argo-workflows.git
     path: manifests/cluster-install
