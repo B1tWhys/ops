@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-events
+  namespace: argocd
+spec:
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: argo-events
+  project: infra
+  source:
+    repoURL: https://github.com/argoproj/argo-events.git
+    path: manifests/cluster-install
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
