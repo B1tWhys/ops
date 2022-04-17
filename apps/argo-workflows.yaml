@@ -10,7 +10,7 @@ spec:
   project: infra
   source:
     repoURL: https://github.com/argoproj/argo-workflows.git
-    path: manifests/quick-start-postgres
+    path: manifests/quick-start-postgres.yaml
     targetRevision: v3.3.1
   syncPolicy:
     syncOptions:
