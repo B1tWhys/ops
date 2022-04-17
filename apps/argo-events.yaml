@@ -10,6 +10,7 @@ spec:
   source:
     repoURL: https://github.com/argoproj/argo-events.git
     path: manifests/cluster-install
+    targetRevision: v1.6.3
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
