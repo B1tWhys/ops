@@ -10,7 +10,7 @@ spec:
   project: infra
   source:
     repoURL: https://github.com/argoproj/argo-events.git
-    path: manifests/cluster-install
+    path: manifests/namespace-install
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
