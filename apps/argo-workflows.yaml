@@ -6,8 +6,12 @@ metadata:
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
+    namespace: argo
   project: default
   source:
     repoURL: https://github.com/argoproj/argo-workflows.git
     path: manifests/cluster-install
     targetRevision: v3.3.1
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
