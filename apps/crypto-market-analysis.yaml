@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: market-analysis
+  namespace: argocd
+spec:
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: market-analysis
+  project: default
+  source:
+    repoURL: git@github.com:Bouldersky/crypto-pd-analysis.git
+    targetRevision: k8s
+    path: crypto_l2_stream_ingest/k8s
