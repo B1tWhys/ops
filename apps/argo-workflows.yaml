@@ -10,7 +10,7 @@ spec:
   project: infra
   source:
     repoURL: https://github.com/argoproj/argo-workflows.git
-    path: manifests/cluster-install
+    path: manifests/quick-start-postgres
     targetRevision: v3.3.1
   syncPolicy:
     syncOptions:
