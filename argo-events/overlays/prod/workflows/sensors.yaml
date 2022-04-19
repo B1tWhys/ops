@@ -20,7 +20,7 @@ spec:
               apiVersion: argoproj.io/v1alpha1
               kind: Workflow
               metadata:
-                namespace: argo
+                namespace: argocd
                 name: build-crypto-l2-ingest-image
               spec:
                 entrypoint: test
