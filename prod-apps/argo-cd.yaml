@@ -12,7 +12,7 @@ spec:
   project: prod
   source:
     repoURL: git@github.com:Bouldersky/ops.git
-    targetRevision: master
+    targetRevision: HEAD
     path: argo-cd/overlays/prod
   syncPolicy:
     automated:
