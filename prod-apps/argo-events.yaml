@@ -1,47 +1,21 @@
-#apiVersion: argoproj.io/v1alpha1
-#kind: Application
-#metadata:
-#  name: argo-events
-#  namespace: argocd
-#spec:
-#  destination:
-#    server: "https://kubernetes.default.svc"
-#  project: infra
-#  source:
-#    repoURL: https://github.com/argoproj/argo-events.git
-#    path: manifests/cluster-install
-#    targetRevision: v1.6.3
-#  syncPolicy:
-#    syncOptions:
-#      - CreateNamespace=true
-#---
-#apiVersion: v1
-#kind: Namespace
-#metadata:
-#  name: argo-events
-#---
-#apiVersion: argoproj.io/v1alpha1
-#kind: EventBus
-#metadata:
-#  name: default
-#  namespace: argocd
-#spec:
-#  nats:
-#    native:
-#      # Optional, defaults to 3. If it is < 3, set it to 3, that is the minimal requirement.
-#      replicas: 3
-#      # Optional, authen strategy, "none" or "token", defaults to "none"
-#      auth: token
-##      containerTemplate:
-##        resources:
-##          requests:
-##            cpu: "10m"
-##      metricsContainerTemplate:
-##        resources:
-##          requests:
-##            cpu: "10m"
-##      antiAffinity: false
-##      persistence:
-##        storageClassName: standard
-##        accessMode: ReadWriteOnce
-##        volumeSize: 10Gi
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-events
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: prod
+  source:
+    repoURL: git@github.com:Bouldersky/ops.git
+    targetRevision: HEAD
+    path: argo-events/overlays/prod
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=True
