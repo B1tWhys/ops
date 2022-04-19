@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: test-sensor
+spec:
+  dependencies:
+    - name: test-dep
+      eventSourceName: test-event
+      eventName: example
+  triggers:
+    - template:
+        name: test
+        k8s:
+          operation: create
+          source:
+            resource:
+              apiVersion: argoproj.io/v1alpha1
+              kind: Workflow
+              metadata:
+                namespace: argocd
+                name: build-crypto-l2-ingest-image
+              spec:
+                entrypoint: test
+                templates:
+                  - name: test
+                    container:
+                      image: docker/whalesay
+                      command:
+                        - cowsay
+                      args : ["hello world"]
