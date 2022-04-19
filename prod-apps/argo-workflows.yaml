@@ -1,17 +1,21 @@
-#apiVersion: argoproj.io/v1alpha1
-#kind: Application
-#metadata:
-#  name: argo-workflows
-#  namespace: argocd
-#spec:
-#  destination:
-#    server: 'https://kubernetes.default.svc'
-#    namespace: argo
-#  project: infra
-#  source:
-#    repoURL: https://github.com/argoproj/argo-workflows.git
-#    path: manifests/cluster-install
-#    targetRevision: v3.3.1
-#  syncPolicy:
-#    syncOptions:
-#      - CreateNamespace=true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-workflows
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: prod
+  source:
+    repoURL: git@github.com:Bouldersky/ops.git
+    targetRevision: HEAD
+    path: argo-workflows/overlays/prod
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=True
