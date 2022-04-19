@@ -30,7 +30,7 @@ spec:
     namespace: prod
   project: prod
   source:
-    repoURL: https://github.com/Bouldersky/ops.git
+    repoURL: git@github.com:Bouldersky/ops.git
     targetRevision: HEAD
     path: prod-apps
   syncPolicy:
