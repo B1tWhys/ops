@@ -2,8 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: argocd
 resources:
-  - ./namespace.yaml
-#  - https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.17.4/controller.yaml
-  - https://raw.githubusercontent.com/argoproj/argo-cd/v2.3.3/manifests/install.yaml
-  - ./root-app.yaml
-  - ./root-project.yaml
+  # argocd references itself at runtime with the normal app pattern after bootstrapping
+  - ../argo-cd/overlays/prod
+  - ./prod.yaml
+#  - ./staging.yaml
