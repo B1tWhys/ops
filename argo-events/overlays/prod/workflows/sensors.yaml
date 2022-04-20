@@ -23,6 +23,7 @@ spec:
               kind: Workflow
               metadata:
                 namespace: argo-events
+                generateName: test-workflow-
                 name: build-crypto-l2-ingest-image
               spec:
                 entrypoint: test
