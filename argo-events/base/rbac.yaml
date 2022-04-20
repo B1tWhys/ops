@@ -25,5 +25,5 @@ roleRef:
   name: operate-workflow-role
 subjects:
   - kind: ServiceAccount
-    name: operate-workflows-sa
+    name: operate-workflow-sa
     namespace: argo-events

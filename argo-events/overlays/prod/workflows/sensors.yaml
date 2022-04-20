@@ -8,7 +8,7 @@ spec:
       eventSourceName: test-event
       eventName: example
   template:
-    serviceAccountName: operate-workflows-sa
+    serviceAccountName: operate-workflow-sa
   triggers:
     - template:
         name: test
