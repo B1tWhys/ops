@@ -5,3 +5,4 @@ resources:
   - namespace.yaml
   - https://github.com/argoproj/argo-events/manifests/cluster-install?ref=v1.6.3
   - event-bus.yaml
+  - rbac.yaml
