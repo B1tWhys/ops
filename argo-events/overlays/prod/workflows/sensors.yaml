@@ -24,7 +24,7 @@ spec:
               metadata:
                 namespace: argo-events
                 generateName: test-workflow-
-                name: build-crypto-l2-ingest-image
+#                name: build-crypto-l2-ingest-image
               spec:
                 entrypoint: test
                 templates:
