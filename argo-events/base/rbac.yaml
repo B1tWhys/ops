@@ -26,3 +26,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: operate-workflows-sa
+    namespace: argo-events
