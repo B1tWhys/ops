@@ -5,7 +5,7 @@ metadata:
   namespace: argo
 spec:
   rules:
-    - host: argo-workflows.minikube
+    - host: argo-workflows
       http:
         paths:
           - path: /
