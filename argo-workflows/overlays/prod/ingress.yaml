@@ -8,8 +8,10 @@ spec:
     - host: argo-workflows.minikube
       http:
         paths:
-          - backend:
+          - path: /
+            backend:
               service:
                 name: argo-workflows
+                port:
+                  number: 8090
             pathType: Prefix
-            path: /
