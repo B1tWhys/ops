@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argo-workflows
+  namespace: argo
+spec:
+  rules:
+    - host: argo-workflows.minikube
+      http:
+        paths:
+          - backend:
+              service:
+                name: argo-workflows
+            pathType: Prefix
+            path: /
